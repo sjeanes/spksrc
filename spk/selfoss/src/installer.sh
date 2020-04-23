@@ -48,7 +48,7 @@ postinst ()
     mkdir -p /var/packages/${PACKAGE}/conf && echo -e "[MariaDB]\ndsm_min_ver=5.0-4300" > /var/packages/${PACKAGE}/conf/PKG_DEPS
 
     # Install busybox stuff
-    ${INSTALL_DIR}/bin/busybox --install ${INSTALL_DIR}/bin
+    ${INSTALL_DIR}/bin/busybox --install --overwrite ${INSTALL_DIR}/bin
 
     # Install the web interface
     cp -pR ${INSTALL_DIR}/share/${PACKAGE} ${WEB_DIR}
